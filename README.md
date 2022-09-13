@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# PostPress
+
+A blog CMS built on Next.js and MongoDB by Josh Arroyo
