@@ -23,7 +23,11 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <ul className={utilStyles.list}>
           {allPostsData.map((props) => {
-            return <PostPreview key={props._id} props={props}></PostPreview>;
+            return (
+              <li key={props._id}>
+                <PostPreview props={props}></PostPreview>
+              </li>
+            );
           })}
         </ul>
       </section>
