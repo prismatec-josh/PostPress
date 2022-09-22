@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { marked } from "marked";
+import sanitizeHtml from "sanitize-html";
 import Layout, { siteTitle } from "../components/layout";
 import PostPreview from "../components/PostPreview";
 import utilStyles from "../styles/utils.module.css";
@@ -23,9 +25,15 @@ export default function Home({ allPostsData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <ul className={utilStyles.list}>
           {allPostsData.map((props) => {
+            const { body, author, _id, title } = props;
+            const parsedBody = sanitizeHtml(marked.parse(body));
             return (
-              <li key={props._id}>
-                <PostPreview props={props}></PostPreview>
+              <li key={_id}>
+                <PostPreview
+                  body={parsedBody}
+                  author={author}
+                  title={title}
+                ></PostPreview>
               </li>
             );
           })}
