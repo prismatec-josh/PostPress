@@ -10,10 +10,7 @@ export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Josh Arroyo's personal tech blog" />
       </Head>
       <header className={styles.header}>
         {home ? (
