@@ -1,4 +1,5 @@
 import Head from "next/head";
+import FooterComponent from "./FooterComponent";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
@@ -28,6 +29,7 @@ export default function Layout({ children, home }) {
         )}
       </header>
       <main>{children}</main>
+      <FooterComponent />
     </div>
   );
 }
